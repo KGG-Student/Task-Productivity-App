@@ -8,10 +8,7 @@ import java.sql.*;
 
 public class UserDAO {
 
-    /**
-     * Create new user (Register).
-     * Takes raw password, hashes it, then stores.
-     */
+   
     public boolean createUser(User user) {
         String sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
         try (Connection conn = DBConnection.getConnection();
@@ -37,10 +34,7 @@ public class UserDAO {
         return false;
     }
 
-    /**
-     * Fetch a user by username.
-     * Returns a User object (with id, username, and hashed password) or null if not found.
-     */
+   
     public User getUserByUsername(String username) {
         String sql = "SELECT id, username, password_hash FROM users WHERE username = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -64,10 +58,7 @@ public class UserDAO {
         return null;
     }
 
-    /**
-     * Validate login credentials.
-     * Hashes the input password and compares to stored hash.
-     */
+    
     public boolean validateLogin(String username, String password) {
         String userInput = username.trim();
         String rawPassword = password.trim();
