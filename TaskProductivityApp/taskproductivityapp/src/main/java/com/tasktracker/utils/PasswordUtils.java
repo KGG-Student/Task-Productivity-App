@@ -12,7 +12,7 @@ public class PasswordUtils {
 
             StringBuilder sb = new StringBuilder();
             for (byte b : hashBytes) {
-                sb.append(String.format("%02x", b)); // convert to hex
+                sb.append(String.format("%02x", b)); 
             }
 
             return sb.toString();
