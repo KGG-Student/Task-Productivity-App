@@ -62,8 +62,17 @@ Registration
 
 ![image](https://github.com/user-attachments/assets/16812369-a76c-4878-ae75-c548a6a5b9c4)
 
+**Database**
+    
+    Table for users
+    where Login/Registered Credentials are stored and taken during login
+    Password Hashing is Utilized as Username Unique Modified is also enabled
+![image](https://github.com/user-attachments/assets/e55c07ac-0b83-42ec-bbb6-13651f059c3c)
 
-
+    Table for Tasks 
+    where tasks created are stored and where the application grenerates the dashboad 
+![image](https://github.com/user-attachments/assets/a11de36c-e23d-400e-b25a-664431ca47f7)
+    
 
 **Technical Stack**
     
@@ -76,8 +85,6 @@ Registration
     Architecture: Event-driven and modular design using OOP concepts
 
 
-
-
 **Code Highlights**
     
     DashboardWindow manages the UI and interactions.
@@ -85,3 +92,39 @@ Registration
     TaskDAO handles data persistence and retrieval.
 
     Task and User are model classes used to encapsulate task/user details.
+
+**How to Run the Task Productivity App**
+    
+    This guide assumes you are using Java (JDK 8 or later) and a MySQL database. Follow the steps below to set up and run the application.
+
+**Prerequisites**
+
+    Java JDK 8+ installed
+
+    MySQL Server running
+
+    IDE like IntelliJ, Eclipse, or NetBeans (optional)
+
+    MySQL JDBC driver included in your project classpath
+
+
+**Step 1: Create The Databases**        
+    
+    CREATE DATABASE task_tracker_db;
+    USE task_tracker_db;
+    
+**Step 2:Import tables and data**
+
+    mysql -u your_username -p task_tracker_db < path/to/task_tracker_db_users.sql
+    mysql -u your_username -p task_tracker_db < path/to/task_tracker_db_tasks.sql
+
+**Step 3:Configure Database in Your App**
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/task_tracker_db";
+    private static final String USER = "your_mysql_user";
+    private static final String PASSWORD = "your_mysql_password";
+    
+**Step 4: Compile and Run the App**
+
+    import the Java project folder.
+    compile the application and run the App.java to start the application
