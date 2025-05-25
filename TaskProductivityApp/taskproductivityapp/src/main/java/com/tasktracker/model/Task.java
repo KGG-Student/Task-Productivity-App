@@ -10,10 +10,8 @@ public class Task {
     private LocalDate dueDate;
     private String status;
 
-    // Default constructor
     public Task() {}
 
-    // Constructor without ID (used for creating new tasks before DB assigns ID)
     public Task(int userId, String title, String description, LocalDate dueDate, String status) {
         this.userId = userId;
         this.title = title;
@@ -22,7 +20,6 @@ public class Task {
         this.status = status;
     }
 
-    // Constructor with ID (used when retrieving from database)
     public Task(int id, int userId, String title, String description, LocalDate dueDate, String status) {
         this.id = id;
         this.userId = userId;
@@ -32,7 +29,6 @@ public class Task {
         this.status = status;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }
