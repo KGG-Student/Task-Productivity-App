@@ -9,7 +9,6 @@ import java.util.List;
 
 public class TaskDAO {
 
-    // Create a new task, retrieve and set generated ID
     public boolean createTask(Task task) {
         String sql = "INSERT INTO tasks (user_id, title, description, due_date, status) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
@@ -36,7 +35,6 @@ public class TaskDAO {
         }
     }
 
-    // Retrieve tasks with proper ID mapping
     public List<Task> getTasksByUser(int userId) {
         List<Task> tasks = new ArrayList<>();
         String sql = "SELECT id, user_id, title, description, due_date, status FROM tasks WHERE user_id = ? ORDER BY id";
@@ -63,7 +61,6 @@ public class TaskDAO {
         return tasks;
     }
 
-    // Update existing task
     public boolean updateTask(Task task) {
         String sql = "UPDATE tasks SET title = ?, description = ?, due_date = ?, status = ? WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -84,7 +81,6 @@ public class TaskDAO {
         }
     }
 
-    // Delete a task by ID
     public boolean deleteTask(int taskId) {
         String sql = "DELETE FROM tasks WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
