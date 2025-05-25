@@ -75,12 +75,12 @@ public class RegisterWindow extends Frame implements ActionListener {
         boolean success = dao.createUser(new User(username, password));
 
         if (success) {
-    lblStatus.setText("✅ Registered successfully!");
+    lblStatus.setText("Registered successfully!");
     lblStatus.setForeground(Color.GREEN);
 
 
     } else {
-    lblStatus.setText("❌ Registration failed. Try another username.");
+    lblStatus.setText("Registration failed. Try another username.");
     lblStatus.setForeground(Color.RED);
     }
     
