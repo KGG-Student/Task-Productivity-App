@@ -3,9 +3,9 @@ Project Overview: Task Productivity Tracker or
 The Task Tracker is a Java-based desktop application designed to help users manage and organize their tasks efficiently. It follows an event-driven programming model and leverages core Object-Oriented Programming principles along with database integration.
 
 SUBMITTED BY: 
-ARNEL ENRICO PAOLO CODERA
-KYLE GABRIEL GALANIDA
-JHEMAR VISANDE
+ARNEL ENRICO PAOLO CODERA,
+KYLE GABRIEL GALANIDA,
+JHEMAR VISANDE,
 
 
 **Key Features**
