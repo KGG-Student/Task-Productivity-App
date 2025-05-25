@@ -57,7 +57,6 @@ public class AddTaskDialog extends Dialog implements ActionListener {
         String desc = taDescription.getText().trim();
 
         if (title.isEmpty()) {
-            // Optionally show feedback:
             Dialog alert = new Dialog(this, "Error", true);
             alert.setLayout(new FlowLayout());
             alert.add(new Label("Title cannot be empty."));
@@ -70,7 +69,6 @@ public class AddTaskDialog extends Dialog implements ActionListener {
             return;
         }
 
-        // Use the constructor without categoryId
         Task task = new Task(
             userId,
             title,
