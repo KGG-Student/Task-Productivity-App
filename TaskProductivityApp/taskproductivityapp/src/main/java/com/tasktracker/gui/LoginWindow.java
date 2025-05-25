@@ -12,7 +12,6 @@ public class LoginWindow extends Frame implements ActionListener {
     Button btnLogin, btnRegister;
 
     public LoginWindow() {
-        // UI components
         lblUsername = new Label("Username:");
         lblPassword = new Label("Password:");
         lblStatus = new Label("");
@@ -30,7 +29,6 @@ public class LoginWindow extends Frame implements ActionListener {
             new RegisterWindow();
         });
 
-        // Layout
         setLayout(null);
         lblUsername.setBounds(50, 50, 80, 25);
         tfUsername.setBounds(140, 50, 150, 25);
@@ -69,13 +67,13 @@ public class LoginWindow extends Frame implements ActionListener {
 
         UserDAO userDAO = new UserDAO();
         if (userDAO.validateLogin(username, password)) {
-            lblStatus.setText("✅ Login successful!");
+            lblStatus.setText("Login successful!");
             lblStatus.setForeground(Color.GREEN);
             User user = userDAO.getUserByUsername(username);
             dispose();
             new DashboardWindow(user); 
         } else {
-            lblStatus.setText("❌ Invalid credentials");
+            lblStatus.setText("Invalid credentials");
             lblStatus.setForeground(Color.RED);
         }
     }
