@@ -65,7 +65,6 @@ public class DashboardWindow extends Frame {
 
         add(buttonPanel, BorderLayout.NORTH);
 
-        // Load tasks initially using default filter
         loadTasks(filterChoice.getSelectedItem());
 
         addBtn.addActionListener(e -> showAddTaskDialog());
@@ -225,7 +224,7 @@ public class DashboardWindow extends Frame {
                 Task task = new Task(user.getId(), title, desc, dueDate, status);
                 taskDAO.createTask(task);
                 dialog.dispose();
-                loadTasks(filterChoice.getSelectedItem());  // ✅ Proper refresh
+                loadTasks(filterChoice.getSelectedItem());  
             } catch (Exception ex) {
                 Dialog err = new Dialog(dialog, "Error", true);
                 err.setLayout(new FlowLayout());
